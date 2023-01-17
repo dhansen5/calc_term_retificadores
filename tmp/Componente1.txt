@@ -1,0 +1,4 @@
+Nome do Componente: Componente1 
+Tipo de Encapsulamento: Encapsulamento1 
+Potencia Dissipada: 6.793 Watts 
+Dissipador Recomendado: abaixo de 21.818 C/Watt 

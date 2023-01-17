@@ -1,0 +1,9 @@
+Encapsulamento		Juncao-capsula (C/Watt)		Juncao-ambiente (C/Watt)
+TO-3			5				60
+TO-39			12				140
+TO-220			3				62.5
+TO-220FB		3				50
+TO-223			30.6				53
+TO-252			5				92
+TO-263 			23.5				50
+D2PAK			4				35
