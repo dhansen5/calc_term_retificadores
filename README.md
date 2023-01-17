@@ -1,4 +1,4 @@
-### Projeto Cálculo Térmico em Retificadores operando em regime permanente###
+### Projeto Cálculo Térmico em Retificadores operando em regime permanente
 
 ---
 
