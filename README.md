@@ -1,13 +1,7 @@
-# calc_term_retificadores
-
-O projeto faz o cálculo de algumas grandezas utilizadas no dimensionamento de dissipadores para componentes utilizados em retificadores considerando regime permanente.
-
-Existe uma tabela que o programa utiliza através de um arquivo de texto, com algumas caracteristicas dos encapsulamentos mais utilizados em retificadores, o que pode auxiliar o usuario.
-Este arquivo de texto pode ser editado pelo usuario a fim de adicionar ou remover encapsulamentos.
-
-O usuário pode ainda ver a diferença entre a temperatura de junção do componente com e sem o dissipador e assim saber se o componente corre riscos de ser danificado caso não seja utilizado um dissipador.
+### Projeto calculo Térmico em Regime Permanente em Retificadores ###
 
 ---
+
 O projeto faz o cálculo de algumas grandezas utilizadas no dimensionamento de dissipadores para componentes utilizados em retificadores considerando operação em regime permanente.
 
 A potência dissipada pelo componente, é calculada a partir da queda de tensão sobre o mesmo em operação, sua corrente média e a eficaz, assim como sua resistência interna. Estes valores devem ser informados pelo usuário.
