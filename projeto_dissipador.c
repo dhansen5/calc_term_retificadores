@@ -3,30 +3,30 @@
 #include <math.h>
 #include <ctype.h>
 
-// Arquivos de texto
+// Variáveis para manipulação dos arquivos de texto
 char arquivo[80];
-char *PastaArquivo 		= "tmp/";    // NOME DA PASTA
+char *PastaArquivo 		= "tmp/";    	// NOME DA PASTA DE BUSCA DOS ARQUIVOS
 char *ArquivoPackages	= "encapsulamentos";
 char *ArquivoFinale	= arquivo;
 char *ExtensaoArquivos 	= ".txt";
-char *mode; 						//= "r";
+char *mode; 						
 char NomeArquivo[80];
 char tipoPackage[80];
-char Package[15];					// TABELA DE ENCAPSULAMENTOS
+char Package[15];				// TABELA DE ENCAPSULAMENTOS
 char jc[4];
 char ja[4];
-FILE *tfp;							// ARQUIVO DE ENCAPSULAMENTOS
-FILE *efp;							// ARQUIVO DE RESULTADOS
+FILE *tfp;					// ARQUIVO DE ENCAPSULAMENTOS
+FILE *efp;					// ARQUIVO DE RESULTADOS
 char SelTipoArq;
 
 
-// variaveis dos calculos
-float vto,itmed,rt,itrms,P,				// Potencia
-	  tamax,tjmax,rjc,rcd,rjd,rja,rda,	// Dissipador
+// Variáveis dos calculos
+float vto,itmed,rt,itrms,P,			// Para cálculo da Potência
+	  tamax,tjmax,rjc,rcd,rjd,rja,rda,	// Para Cálculo do Dissipador
 	  tj_sem,tj_com,rja_sem,rja_com;
 	  
 
-char GeraNomeArquivoPack(int tipoArquivo){		// CAMINHO DO ARQUIVO DE ENCAPSULAMENTOS
+char GeraNomeArquivoPack(int tipoArquivo){	// CAMINHO DO ARQUIVO DE ENCAPSULAMENTOS
 	strcpy(NomeArquivo, "");
 	strcat(NomeArquivo, PastaArquivo);
 	strcat(NomeArquivo, ArquivoPackages);
@@ -34,7 +34,7 @@ char GeraNomeArquivoPack(int tipoArquivo){		// CAMINHO DO ARQUIVO DE ENCAPSULAME
 return(*NomeArquivo);}
 
 
-AdicionaArquivoPack(char SelTipoArqModifica){	// ADICIONA ENCAPSULAMENTO � TABELA
+AdicionaArquivoPack(char SelTipoArqModifica){	// ADICIONA ENCAPSULAMENTO NA TABELA
 GeraNomeArquivoPack(1);	
 	printf("\n-> Encapsulamento:");
 	scanf("%s",&Package);
@@ -53,7 +53,7 @@ GeraNomeArquivoPack(1);
 }
 
 
-void LeArquivo(char SelTipoArqLe){				// LE O ARQUIVO DE ENCAPSULAMENTOS
+void LeArquivo(char SelTipoArqLe){		// LÊ O ARQUIVO DE ENCAPSULAMENTOS
 	GeraNomeArquivoPack(1);	
 	char A;
 	system("CLS");
@@ -78,11 +78,10 @@ void LeArquivo(char SelTipoArqLe){				// LE O ARQUIVO DE ENCAPSULAMENTOS
        case 'A' :
           AdicionaArquivoPack(SelTipoArq);
           break;
- 
-   		 }}
+  	 }
+}		 
    		 
-   		 
-char GeraNomeArquivoFinal(int tipoArquivo){			// NOME DO ARQUIVO GERADO PELO USUARIO COM OS DADOS CALCULADOS
+char GeraNomeArquivoFinal(int tipoArquivo){	// NOME DO ARQUIVO GERADO PELO USUARIO COM OS DADOS CALCULADOS
 	strcpy(NomeArquivo, "");
 	strcat(NomeArquivo, PastaArquivo);
 	strcat(NomeArquivo, ArquivoFinale);
@@ -110,10 +109,6 @@ printf("\n Arquivo Gerado com Sucesso.\n\n");
 system("PAUSE");
 }
    		 
-	
-
-
-
 void welcome(){
 	printf("\n   ||========================================||\n");
 	printf("   ||                             	     ||\n");
@@ -135,9 +130,9 @@ void calc_junc(){
 	printf("\n a resistencia termica entre capsula e ambiente[C/Watt]: ");
 	scanf("%f",&rca);
 	rja_sem = rjc + rca;
-	tj_sem = P * rja_sem + tamax;							// temperatura de jun��o sem dissipador
+	tj_sem = P * rja_sem + tamax;							// temperatura de junção sem dissipador
 	rja_com = rda + rjd;
-	tj_com = P * rja_com + tamax;							// temperatura de jun��o com dissipador
+	tj_com = P * rja_com + tamax;							// temperatura de junção com dissipador
 	printf("\n\n-> Temperatura de Juncao SEM o dissipador: %.2f C",tj_sem);
 	printf("\n\n-> Temperatura de Juncao COM o dissipador: %.2f C",tj_com);
 	printf("\n\n--------------------------------------------------------------\n\n");
